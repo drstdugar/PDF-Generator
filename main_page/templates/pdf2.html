@@ -1,0 +1,71 @@
+{% load static %}
+<html>
+  <div class="container" style="width: 60%; margin-left: 60px; margin-right: 60px;">
+    <head>
+        <title>PDF Generator</title>
+        <!-- <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous"> -->
+    </head>
+
+    <body style="text-align: justify;font-family: 'Times New Roman', Times, serif;">
+      <div>
+          <div style="text-align: center;">
+            <h1 style="padding-top: 40px;">TERAKOYA Academia Inc Pvt. Ltd</h1>
+            <h2 style=" padding-bottom: 20px; font-size: medium;">Kathmandu, Nepal </h2>      
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h4 style="text-align: center; font-size: medium;">Handing Over Note:</h4>
+            <p style="font-size:medium">{{info}}</p>
+          </div>
+          <div>
+            <div style="margin-bottom: 20px;margin-top: 20px;">
+              <table >
+                <tr style="font-size:medium">
+                  <th style="text-align:left">From</th>
+                  <th style="text-align:left">To</th>
+                </tr>
+                <tr style="font-size:medium">
+                  <td>Name:{{data.fromName}}</td>
+                  <td>Name:{{data.toName}}</td>
+                </tr>
+                <tr style="font-size:medium">
+                  <td>Designation:{{data.fromDesignation}}</td>
+                  <td>Designation:{{data.toDesignation}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <h5 style="margin-top: 30px; margin-bottom: 10px; font-size: medium;">Details of Responsibilities Handed Over</h5>
+            <p style="text-align: center;font-size: medium; ">(Details of Important Tasks)</p>
+            <p style="text-align: left; font-size: medium;">{{data.employeeResponsibilities}}</p>
+          </div>
+    
+          <div style="margin-bottom: 20px; margin-top: 20px;">
+              <table>
+                <tr style="font-size: medium;">
+                  <td>Name:{{data.inChargeName}}</td>
+                  <td>Name:{{data.teamLeadName}}</td>
+                  <td>Name:{{data.employeeName}}</td>
+                </tr>
+                <tr style="font-size: medium;">
+                  <td>Designation:{{data.inChargeDesignation}}</td>
+                  <td>Designation:{{data.teamLeadDesignation}}</td>
+                  <td>Designation:{{data.employeeDesignation}}</td>
+                </tr>
+                <tr style="font-size: medium;">
+                  <td>Sign:</td>
+                  <td>Sign:</td>
+                  <td>Sign:</td>
+                </tr>
+              </table>
+          </div>
+      </div>
+  </body> 
+
+</div>
+
+</html>

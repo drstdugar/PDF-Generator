@@ -1,0 +1,139 @@
+{% load static %}
+
+<html>
+  <div class="container" style="width: 63%; padding: 25px;">
+    <head>
+        <title>PDF Generator</title>
+        <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+    </head>
+
+    <body>
+      <div>
+        <form action="{%url 'pdf'%}"
+              method="POST"
+              target="_blank">
+           {%csrf_token%} 
+          <div class="text-center">
+            <!-- <img class="al-center" 
+                  height="200px" 
+                  width="200px" 
+                  src="{% static 'Capture.PNG' %}"> -->
+            <h1>TERAKOYA Academia Inc Pvt. Ltd</h1>
+            <h2>Kathmandu, Nepal </h2>      
+            <h5>Handing Over Note</h5>
+          </div>
+          <div>
+            <p>{{context}}</p>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div>
+                <p>From</p>    
+                <label>Name:</label>
+                <input type="text" 
+                       name="from_name"
+                       id="from_name" 
+                       placeholder="Enter your Full name"><br>
+
+                <label>Designation:</label>
+                <input type="text" 
+                      name="from_designation"
+                      id="from_designation"
+                      placeholder="Enter your Full name">    
+              </div>
+            </div>
+            <div class="col-6">
+              <div>
+                <p>To</p>
+                <label for="to_name">Name:</label>
+                <input type="text"
+                       name="to_name"
+                       id="to_name"
+                       placeholder="Enter your Full name"><br>
+
+                <label for="to_designation">Designation:</label>
+                <input type="text"
+                       name="to_designation"
+                      id="to_designation"
+                      placeholder="Enter your Full name">
+              </div>
+            </div>
+          </div>
+    
+          <div>
+            <h5>Details of Responsibilities Handed Over<h5>
+            <textarea name="employee_responsibilities"
+                      id="employee_responsibilities"
+                      placeholder="Provide detail responsibilites">
+            </textarea>
+          </div>
+    
+          <div class="row">
+            <div class="col-4">
+              <div>
+                <label for="inCharge_name">Name:</label>
+                <input type="text" 
+                       name="inCharge_name"
+                       id="inCharge_name"
+                      placeholder="Enter your Full name"><br>
+                <label>Designation:</label>
+                <input type="text" name="inCharge_designation" id="inCharge_designation" placeholder="Enter your Full name">
+                <p>Sign</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                <label>Name:</label>
+                <input type="text" 
+                       name="teamLead_name"
+                       id="teamLead_name"
+                       placeholder="Enter your Full name"><br>
+
+                <label>Designation:</label>
+                <input type="text"
+                       name="teamLead_designation"
+                       id="teamLead_designation"
+                      placeholder="Enter your Full name">
+                <p>Sign</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                <label>Name:</label>
+                <input type="text" 
+                       name="employee_name"
+                       id="employee_name"
+                       placeholder="Enter your Full name"><br>
+
+                <label>Designation:</label>
+                <input type="text"
+                       name="employee_designation"
+                       id="employee_designation"
+                       placeholder="Enter your Full name">
+                <p>Sign</p>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <button class="btn btn-success" type="submit" target="_blank">Convert to PDF</button>
+          </div>
+      </form>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+              integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+              crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+              integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+              crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+              integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+              crossorigin="anonymous"></script>
+  </body>
+
+</div>
+
+</html>
